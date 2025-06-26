@@ -45,7 +45,8 @@ footer {
 .letter-box {
     width: 75px;
     height: 75px;
-    background-color: #131313;
+    /* Remove or comment out the next line: */
+    /* background-color: #131313; */
     border: 2.75px solid #575757;
     display: inline-block;
     margin: 4px;
@@ -56,6 +57,7 @@ footer {
     line-height: 65px; /* Ensures text is vertically centered and prevents movement */
     overflow: hidden;  /* Prevents overflow if text is too long */
     white-space: nowrap; /* Prevents text wrapping */
+    transition: background-color 0.2s; /* Add smooth color transition */
 }
 
 /* Hide caret and remove underline in editable h3s inside letter-box */
@@ -63,6 +65,17 @@ footer {
     caret-color: transparent;      /* Hides the blinking caret */
     outline: none;                 /* Removes the blue outline on focus */
     border-bottom: none;           /* Removes any underline if present */
+}
+
+.letter-box h3 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 @keyframes letter-jump {
