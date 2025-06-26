@@ -223,6 +223,7 @@ judge
 known
 label
 large
+boats
 laser
 later
 laugh
@@ -494,3 +495,5 @@ would
 wound
 write
 wrong
+squid
+crane
