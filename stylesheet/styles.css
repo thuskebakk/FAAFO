@@ -19,10 +19,11 @@ header {
 
 main {
     padding: 20px;
+    text-align: center;
 }
 
 body {
-    background-color: #f0f0f0;
+    background-color: #000000;
     color: #333;
     line-height: 1.6;
     padding-top: 60px; /* Space for fixed header */
@@ -39,4 +40,39 @@ footer {
     text-align: center;
     line-height: 50px;
     user-select: none;
+}
+
+.letter-box {
+    width: 75px;
+    height: 75px;
+    background-color: #131313;
+    border: 2.75px solid #575757;
+    display: inline-block;
+    margin: 4px;
+    color: #ffffff;
+    font-size: 2rem;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 65px; /* Ensures text is vertically centered and prevents movement */
+    overflow: hidden;  /* Prevents overflow if text is too long */
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+/* Hide caret and remove underline in editable h3s inside letter-box */
+.letter-box h3[contenteditable="true"] {
+    caret-color: transparent;      /* Hides the blinking caret */
+    outline: none;                 /* Removes the blue outline on focus */
+    border-bottom: none;           /* Removes any underline if present */
+}
+
+@keyframes letter-jump {
+    0%   { transform: scale(1) translateY(0); }
+    30%  { transform: scale(1.2, 0.8) translateY(-10px); }
+    50%  { transform: scale(1.1, 0.9) translateY(-6px);}
+    70%  { transform: scale(0.95, 1.05) translateY(2px);}
+    100% { transform: scale(1) translateY(0); }
+}
+
+.letter-jump {
+    animation: letter-jump 0.25s cubic-bezier(.4,2,.6,1) both;
 }
